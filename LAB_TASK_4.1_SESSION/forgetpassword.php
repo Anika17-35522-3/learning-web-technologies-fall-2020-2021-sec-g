@@ -1,6 +1,8 @@
 <?php
+session_start();
 include_once('header.html');
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +11,7 @@ include_once('header.html');
     <title>Forget Password</title>
 </head>
 <body >
-    <form action="">
+    <form method="POST" action="">
         <table align="center" >
             <tr>
                 <td>Enter Email</td>
@@ -21,11 +23,37 @@ include_once('header.html');
                     <input type="submit" name='submit'> 
                 </td>
             </tr>
-        </table>        
-    </form>    
+        </table>
+        
+    </form>
+    
 </body>
 </html>
 
 <?php
+    if(isset($_POST['submit']))
+    {
+        if(isset($_SESSION['email']))
+        {
+            if($_SESSION['email'] == $_POST['fgemail'])
+            {
+                echo "<h1>Email sent.</h1>";
+            }
+            else
+            {
+                echo "<h1>Wrong Email.</h1>";
+            }
+        }
+        else
+        {
+            echo "<h1>Register in the system first.</h1>";
+        }
+    }
+
+?>
+
+
+<?php
+
     include_once('footer.html');
 ?>
