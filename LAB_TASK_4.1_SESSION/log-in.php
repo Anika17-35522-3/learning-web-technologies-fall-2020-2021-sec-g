@@ -1,6 +1,8 @@
 <?php
 include_once('header.html');
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +11,7 @@ include_once('header.html');
     <title>Log-In</title>
 </head>
 <body>
-    <form action="">
+    <form method='POST' action="logincheck.php">
         <fieldset>
             <legend>LOGIN</legend>
             <table align="center">
@@ -29,7 +31,7 @@ include_once('header.html');
                 <tr>
                     <td colspan="2">
                         <input type="submit" name="submit" value='Submit'>
-                        <a href="">Forget Password</a>
+                        <a href="forgetpassword.php">Forget Password</a>
 
                     </td>
                 </tr>
@@ -38,6 +40,18 @@ include_once('header.html');
     </form>
 </body>
 </html>
+
 <?php
+    if(isset($_GET['msg']))
+    {
+        if($_GET['msg'] == 'invalid_user')
+        {
+            echo '<h1>Invalid User<h1>';
+        } 
+    }
+?>
+
+<?php
+
     include_once('footer.html');
 ?>
