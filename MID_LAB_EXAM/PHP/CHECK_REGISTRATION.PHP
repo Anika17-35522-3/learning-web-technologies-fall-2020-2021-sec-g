@@ -14,13 +14,13 @@ if(!empty($_POST['user']) && !empty($_POST['pass'])) {
   
     $result=mysql_query($sql);  
         if($result){  
-    echo "Account Successfully Created";  
+    echo "Account has been  Successfully Created";  
     } else {  
     echo "Failure!";  
     }  
   
     } else {  
-    echo "That username already exists! Please try again with another one
+    echo "This username already exists! Please try again with another one
     .";  
     }  
   
