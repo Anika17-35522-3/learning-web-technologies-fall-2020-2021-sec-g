@@ -20,11 +20,12 @@ if(!empty($_POST['user']) && !empty($_POST['pass'])) {
     }  
   
     } else {  
-    echo "That username already exists! Please try again with another.";  
+    echo "That username already exists! Please try again with another one
+    .";  
     }  
   
 } else {  
-    echo "All fields are required!";  
+    echo "All user fields are required!";  
 }  
 }  
 ?>  
